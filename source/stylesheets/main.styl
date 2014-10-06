@@ -1,0 +1,194 @@
+$leaf       = hsl(140, 80%, 40%)
+$blueberry  = hsl(210, 80%, 50%)
+$cranberry  = hsl(345, 80%, 50%)
+$cloudberry = hsl( 30, 90%, 60%)
+
+$labelSize = 1.1em
+
+selection()
+  color hsl(0, 0%, 90%)
+  background hsl(290, 80%, 30%)
+
+noUserSelect()
+  user-select none
+  -moz-user-select @user-select
+  -webkit-user-select @user-select
+  -ms-user-select @user-select
+
+body
+  font-size 16px
+  font-family 'Noto Sans', sans-serif
+  margin 0
+  background black
+  overflow-y scroll
+
+::selection
+  selection()
+::-moz-selection
+  selection()
+
+dl
+  margin 0
+
+dt
+  font-size $labelSize
+  text-align center
+  font-weight bold
+  line-height 1
+
+dd
+  padding .1em .2em .15em
+  margin 0
+  text-align center
+  line-height 1
+
+#total
+  margin 2em auto 0
+  color $leaf
+
+#total dd
+  font-size 4em
+
+#playPause
+  display table
+  margin 2em auto 0
+  white-space nowrap
+  color $blueberry
+
+#playPause dl,
+#playPause div
+  display inline-block
+
+#playPause dt
+  margin-bottom .7em
+
+#play dd
+  font-size 3.3em
+  border .09em solid $blueberry
+  border-radius .4em
+
+#pause dd
+  font-size 3.3em
+  color black
+  border .09em solid $blueberry
+  border-radius .4em
+  background $blueberry
+
+#ratio
+  font-size 3.3em
+  width 4em
+  text-align center
+
+#lap
+  margin 2em auto 0
+  color $cranberry
+
+#lap dd
+  font-size 3.2em
+
+#ckp
+  margin 2em auto 0
+  color $cloudberry
+
+#ckp dd
+  font-size 2.7em
+
+#buttons
+  display table
+  margin 4em auto 0
+  white-space nowrap
+
+#buttons div
+  display inline-block
+  margin 0 .3em
+  padding .2em .4em .4em
+  font-size $labelSize
+  font-weight bold
+  text-align center
+  line-height 1
+  border-width .2em
+  border-style solid
+  border-radius .6em
+  cursor default
+  noUserSelect()
+
+#stopResetButton
+  border-color $leaf
+  color $leaf
+
+#stopResetButton:hover
+  background $leaf
+  color black
+
+#lapButton
+  border-color $cranberry
+  color $cranberry
+
+#lapButton:hover
+  background $cranberry
+  color black
+
+#ckpButton
+  border-color $cloudberry
+  color $cloudberry
+
+#ckpButton:hover
+  background $cloudberry
+  color black
+
+#playPauseButton
+  border-color $blueberry
+  color $blueberry
+
+#playPauseButton:hover
+  background $blueberry
+  color black
+
+#revStatsOrder
+  display table
+  color $leaf
+  line-height 1
+  margin 1.8em auto
+  cursor pointer
+  noUserSelect()
+  visibility hidden
+
+#revStatsOrder:hover
+  text-decoration underline
+
+#stats
+  margin 0 auto 1em
+  visibility hidden
+
+#stats th,
+#stats td
+  padding .05em .5em
+
+#stats td
+  text-align right
+
+#stats > tbody > tr > td:nth-child(2)
+  text-align left
+
+#stats > thead > tr
+  color black
+  background $leaf
+
+#stats > tbody > tr.STOP
+  color $leaf
+
+#stats > tbody > tr.PLAY
+  color $blueberry
+
+#stats > tbody > tr.PAUSE
+  color black
+  background $blueberry
+
+#stats > tbody > tr.LAP
+  color $cranberry
+
+#stats > tbody > tr.CKP
+  color $cloudberry
+
+#stats > tbody > tr.cancelled
+  text-decoration line-through
