@@ -214,7 +214,7 @@
       totalStart = playStart = lapStart = ckpStart = now;
 
       $stats.css('visibility', 'visible');
-      updateTimers(now, 'PLAY');
+      updateTimers(now, 'START');
 
       state = 'playing';
 
