@@ -160,10 +160,10 @@
                   ( '00' + now.getMilliseconds() ).slice(-3);
 
       // If this is the last event and at least one lap was recorded, then
-      // print 'LAP #' rather than 'FINISH'. Note that the row's class remains
-      // 'FINISH', so its colour will be green rather than red.
+      // print 'LAP # / FINISH' rather than just 'FINISH'. Note that the row's
+      // class remains 'FINISH', so its colour will be green rather than red.
       if (tEventName == 'FINISH' && lapNo > 0)
-        tEvent = 'LAP ' + (++lapNo);
+        tEvent = 'LAP ' + (++lapNo) + ' / FINISH';
       else
         tEvent = tEventName + (tEventNo ? ' ' + tEventNo : '');
 
