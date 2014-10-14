@@ -103,7 +103,6 @@
         ckp,
         fCkp,
         timestamp,
-        tEvent,
         row;
 
     if (state == 'playing') {
@@ -159,17 +158,9 @@
                   ( '0'  + now.getSeconds()      ).slice(-2) + '.' +
                   ( '00' + now.getMilliseconds() ).slice(-3);
 
-      // If this is the last event and at least one lap was recorded, then
-      // print 'LAP # / FINISH' rather than just 'FINISH'. Note that the row's
-      // class remains 'FINISH', so its colour will be green rather than red.
-      if (tEventName == 'FINISH' && lapNo > 0)
-        tEvent = 'LAP ' + (++lapNo) + ' / FINISH';
-      else
-        tEvent = tEventName + (tEventNo ? ' ' + tEventNo : '');
-
       row = '<tr class=' + tEventName + '>' +
               '<td>' + timestamp + '</td>' +
-              '<td>' + tEvent + '</td>' +
+              '<td>' + tEventName + (tEventNo ? ' ' + tEventNo : '') + '</td>' +
               '<td>' + fCkp + '</td>' +
               '<td>' + fLap + '</td>' +
               '<td>' + fPlay + '</td>' +
