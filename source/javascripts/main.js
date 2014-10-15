@@ -32,17 +32,24 @@
       $revStatsOrder;
 
   function init() {
+    var $timers,
+        $buttons;
 
     resetState();
 
-    $total = $('#total').find('dd');
-    $play = $('#play').find('dd');
-    $pause = $('#pause').find('dd');
-    $ratio = $('#ratio');
-    $lap = $('#lap').find('dd');
-    $ckp = $('#ckp').find('dd');
+    $timers = $('#timers');
+    $buttons = $('#buttons');
+
+    $total = $timers.find('#total').find('dd');
+    $play = $timers.find('#play').find('dd');
+    $pause = $timers.find('#pause').find('dd');
+    $ratio = $timers.find('#ratio');
+    $lap = $timers.find('#lap').find('dd');
+    $ckp = $timers.find('#ckp').find('dd');
+
     $stats = $('#stats');
     $statsBody = $stats.find('tbody');
+
     $revStatsOrder = $('#revStatsOrder');
 
     // Bind keys
@@ -64,10 +71,10 @@
     });
 
     // Bind buttons
-    $('#stopResetButton').mousedown(stopReset);
-    $('#lapButton').mousedown(recLap);
-    $('#ckpButton').mousedown(recCkp);
-    $('#playPauseButton').mousedown(playPause);
+    $buttons.find('#stopReset').mousedown(stopReset);
+    $buttons.find('#lap').mousedown(recLap);
+    $buttons.find('#ckp').mousedown(recCkp);
+    $buttons.find('#playPause').mousedown(playPause);
     $revStatsOrder.click(revStatsOrder);
   }
 

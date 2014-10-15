@@ -11,37 +11,38 @@ html
     =stylesheet_link_tag 'main'
     =javascript_include_tag 'main'
   body
-    dl#total
-      dt TOTAL
-      dd>0:00:00.0
-    div#playPause
-      dl#play
-        dt PLAY
+    div#timers
+      dl#total
+        dt TOTAL
         dd>0:00:00.0
-      div#ratio>100%
-      dl#pause
-        dt PAUSE
+      div#playPause
+        dl#play
+          dt PLAY
+          dd>0:00:00.0
+        div#ratio>100%
+        dl#pause
+          dt PAUSE
+          dd>0:00:00.0
+      dl#lap
+        dt LAP
         dd>0:00:00.0
-    dl#lap
-      dt LAP
-      dd>0:00:00.0
-    dl#ckp
-      dt CHECKPOINT
-      dd>0:00:00.0
+      dl#ckp
+        dt CHECKPOINT
+        dd>0:00:00.0
     div#buttons
-      div#stopResetButton
+      div#stopReset
         | Stop/Reset
         br
         | [Esc]
-      div#ckpButton
+      div#ckp
         | Checkpoint
         br
         | [Tab]
-      div#lapButton
+      div#lap
         | Lap/Cancel
         br
         | [Enter]
-      div#playPauseButton
+      div#playPause
         | Play/Pause
         br
         | [Space]
@@ -51,9 +52,9 @@ html
         tr
           th TIMESTAMP
           th EVENT
-          th#ckpStats CKP
-          th#lapStats LAP
-          th#playStats PLAY
-          th#pauseStats PAUSE
+          th#ckp CKP
+          th#lap LAP
+          th#play PLAY
+          th#pause PAUSE
           th TOTAL
       tbody
