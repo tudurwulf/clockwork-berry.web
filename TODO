@@ -1,9 +1,10 @@
-[>] Lap/Ckp diff
 [ ] Current play/pause
+[ ] Lap/Ckp diff
 [ ] #.0
 [ ] Help
 [ ]! Adapt to viewport size
 [ ] Browser requirements
+[x] Protect user from double key press
 
 Legend:
   [ ] To do
